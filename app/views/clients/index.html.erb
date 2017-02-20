@@ -1,0 +1,38 @@
+
+
+<h2>Clientes</h2>
+<%= link_to "Nuevo Cliente", new_client_path, class: "btn btn-primary" %>
+<div class="row">
+	<div class="col-sm-9">
+		<table class="table table-bordered table-hover table-striped">
+			<thead>
+				<tr>
+					<th>Codigo</th>
+					<th>Cliente</th>
+					<th>Direccion</th>
+					<th>Telefono</th>
+					<th>E-mail</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @clients.each do |client| %>
+				<tr>
+					<td><%= client.id %></td>
+					<td><%= client.name %></td>
+					<td><%= client.address %></td>
+					<td><%= client.phone %></td>
+					<td><%= client.email %></td>
+					<td><%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_client_path(client)%></td>
+			
+					<td><%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, client, method: :delete, data: { confirm: "Are yoy sure?" }%></td>
+				</tr>
+						
+				<% end %>
+			</tbody>
+		</table>
+		
+		
+	</div>
+</div>
