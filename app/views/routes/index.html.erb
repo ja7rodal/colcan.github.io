@@ -19,7 +19,7 @@
 				<% @routes.each do |route| %>
 				<tr>
 					<td><%= route.id %></td>
-					<td><%= route.ruta %></td>
+					<td><%= link_to route.ruta, route_path(route) %></td>
 
 					<td><%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_route_path(route)%></td>
 			

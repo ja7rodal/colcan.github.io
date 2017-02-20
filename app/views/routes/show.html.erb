@@ -1,0 +1,9 @@
+<div class="row">
+	<div class="col-sm-offset-2 col-sm-8">
+		<div class="list-group">
+		<% @route.clients.each do |client|%>
+			<%= link_to client.name, client_path(client), class: "list-group-item" %>
+		<% end %>
+		</div>
+	</div>
+</div>
