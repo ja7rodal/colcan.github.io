@@ -14,7 +14,6 @@
 					<th>Cliente</th>
 					<th>Amount</th>
 					<th>Edit</th>
-					<th>A</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -24,9 +23,6 @@
 					<td><%= receipt.client.name %></td>
 					<td><%= receipt.amount %></td>
 					<td><%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_receipt_path(receipt)%></td>
-
-					<td><%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, receipt, method: :delete, data: { confirm: "Are yoy sure?" }%></td>
-				</tr>
 
 				<% end %>
 			</tbody>

@@ -6,6 +6,10 @@ class ClientsController < ApplicationController
 		@clients = Client.take(60)
 	end
 
+	def show
+		@client = Client.find(params[:id])
+	end
+	
 	def new
 		@client = Client.new
 	end

@@ -14,14 +14,17 @@
 
       <%= form_for @receipt do |f| %>
       <div class="form-group">
+       	<%= f.label :client_id %>
         <%= f.number_field :client_id, class: "form-control input-lg" , placeholder: "Ingresa el codigo del cliente" %>
       </div>
 
       <div class="form-group">
+       	<%= f.label "Valor" %>
         <%= f.number_field :amount, class: "form-control input-lg" , placeholder: "$" %>
       </div>
 
       <div class="form-group">
+       	<%= f.label :temperature %>
         <%= f.number_field :temperature, class: "form-control input-lg" , placeholder: "Ingresa la temperatura" %>
       </div>      
 
