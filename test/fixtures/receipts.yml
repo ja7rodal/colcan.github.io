@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: receipts
+#
+#  id          :integer          not null, primary key
+#  client_id   :integer
+#  amount      :integer
+#  user_id     :integer
+#  temperature :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  amount: 1
+  user: one
+  temperature: 1
+
+two:
+  client: two
+  amount: 1
+  user: two
+  temperature: 1

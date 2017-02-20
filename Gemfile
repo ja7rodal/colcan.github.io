@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bootstrap-sass', '~> 3.3.6'
-
+gem 'seed_dump'
+gem 'faker'
 #gem devise
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
