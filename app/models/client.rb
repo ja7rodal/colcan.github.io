@@ -12,4 +12,6 @@
 #
 
 class Client < ApplicationRecord
+	has_many :receipts
+	has_one :user
 end

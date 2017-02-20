@@ -3,35 +3,59 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title align-rigth">Comprobante No. <%= @receipt.id %></h3>
+				<h2 class="panel-title text-center"><strong>Comprobante No. <%= @receipt.id %></strong></h2>
 			</div>
 			<div class="panel-body">
 				<div class="row">
 					<div class="col-sm-8">
-						Laboratorio Colcan
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-8">
-					<div>Bogota, Colombia</div>
-					<div>Mensajero: <%= @receipt.user_id %> </div>
-					<hr>
-					<div>Cliente: <%= @receipt.client.name %></div>
-					<div>Direccion: <%= @receipt.client.address %></div>
-					<div>Telefono: <%= @receipt.client.phone %></div>
-					<div>Email: <%= @receipt.client.email %></div>
-					<hr>
-					<h3>Muestras</h3>
-					<div>Temperatura: <%= @receipt.temperature %></div>
-					<div>Valor:  $<%= @receipt.amount %></div>
-					
-					
+						<div>Laboratorio Colcan</div>
+
+						<div>Bogota, Colombia</div>
+						<div>Mensajero: <%= @receipt.user.email %> </div>
+						<hr>
+						<div>Cliente: <%= @receipt.client.name %></div>
+						<div>Direccion: <%= @receipt.client.address %></div>
+						<div>Telefono: <%= @receipt.client.phone %></div>
+						<div>Email: <%= @receipt.client.email %></div>
+						<hr>
 					</div>
 					<div class="col-sm-4"><%= @receipt.created_at.strftime("%B %d, %Y") %></div>
 				</div>
-				
+				<div class="row">
+					<div class="col-sm-offset-2 col-sm-6 ">
+						<h3>Muestras</h3>
+						<div>Temperatura: <%= @receipt.temperature %> °C</div>
+						<div>Valor:  $<%= @receipt.amount %></div>
+						<div>
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Tipo de muestra</th>
+										<th>Cantidad</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% @receipt.samples.each do |sample|  %>
+									<tr>									
+										<td><%= sample.sample %></td>
+										<td><%= sample.quantity %></td>
+									</tr>
+									<% end %>
+
+								</tbody>
+							</table>
+							<hr>
+
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-offset-1 col-sm-10 text-justify">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, id, corporis? Atque alias autem hic molestias maxime odio provident adipisci, magni sed tempora quod vero, distinctio dolorum non quasi pariatur!
+					</div>
+				</div>
 			</div>
-			<div class="panel-footer">Generado por colcanApp</div>
+			<div class="panel-footer text-right">Generado por colcanApp</div>
 		</div>
 	</div>
 </div>
