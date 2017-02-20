@@ -20,7 +20,7 @@
 			<tbody>
 				<% @receipts.each do |receipt| %>
 				<tr>
-					<td>Comp. <%= receipt.id %></td>
+					<td><%= link_to "Comp. "+receipt.id.to_s, receipt_path(receipt) %></td>
 					<td><%= receipt.client.name %></td>
 					<td><%= receipt.amount %></td>
 					<td><%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_receipt_path(receipt)%></td>

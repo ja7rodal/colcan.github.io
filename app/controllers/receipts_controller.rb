@@ -5,6 +5,11 @@ class ReceiptsController < ApplicationController
 	def index
 		@receipts = Receipt.take(60)
 	end
+	
+	def show
+		@receipt = Receipt.find(params[:id])
+	end
+	
 
 	def new
 		@receipt = Receipt.new
@@ -41,6 +46,6 @@ class ReceiptsController < ApplicationController
 
 	private
 	def receipt_params
-		params.require(:receipt).permit(:amount, :temperature)
+		params.require(:receipt).permit(:amount, :temperature, :client_id)
 	end
 end

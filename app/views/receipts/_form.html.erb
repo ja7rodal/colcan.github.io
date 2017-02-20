@@ -1,0 +1,35 @@
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h2><%= form_title %></h2>
+
+      <% if @receipt.errors.any? %>
+      <div class="alert alert-danger">
+        <ul>
+          <% @receipt.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+
+      <%= form_for @receipt do |f| %>
+      <div class="form-group">
+        <%= f.number_field :client_id, class: "form-control input-lg" , placeholder: "Ingresa el codigo del cliente" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.number_field :amount, class: "form-control input-lg" , placeholder: "$" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.number_field :temperature, class: "form-control input-lg" , placeholder: "Ingresa la temperatura" %>
+      </div>      
+
+
+
+      <div class="form-group">
+        <%= f.submit form_title, class: "btn btn-success btn-lg" %>
+      </div>
+
+      <% end %>
+    </div>

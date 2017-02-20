@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-sm-offset-2 col-sm-8">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title align-rigth">Comprobante No. <%= @receipt.id %></h3>
+			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-sm-8">
+						Laboratorio Colcan
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-8">
+					<div>Bogota, Colombia</div>
+					<div>Mensajero: <%= @receipt.user_id %> </div>
+					<hr>
+					<div>Cliente: <%= @receipt.client.name %></div>
+					<div>Direccion: <%= @receipt.client.address %></div>
+					<div>Telefono: <%= @receipt.client.phone %></div>
+					<div>Email: <%= @receipt.client.email %></div>
+					<hr>
+					<h3>Muestras</h3>
+					<div>Temperatura: <%= @receipt.temperature %></div>
+					<div>Valor:  $<%= @receipt.amount %></div>
+					
+					
+					</div>
+					<div class="col-sm-4"><%= @receipt.created_at.strftime("%B %d, %Y") %></div>
+				</div>
+				
+			</div>
+			<div class="panel-footer">Generado por colcanApp</div>
+		</div>
+	</div>
+</div>
