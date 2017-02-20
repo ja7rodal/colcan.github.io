@@ -1,5 +1,5 @@
 module ReceiptsHelper
-	def form_title
+	def form_title_receipt
 		@receipt.new_record? ? "Crear Comprobante" : "Modificar Comprobante"
 	end
 	def header_style

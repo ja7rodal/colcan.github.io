@@ -1,5 +1,5 @@
 module RoutesHelper
-	def form_title
+	def form_title_route
 		@route.new_record? ? "Crear Ruta" : "Modificar Ruta"
 	end
 	def header_style

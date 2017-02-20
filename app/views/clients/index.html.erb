@@ -11,6 +11,7 @@
 			<thead>
 				<tr>
 					<th>Codigo</th>
+					<th>Ruta</th>
 					<th>Cliente</th>
 					<th>Direccion</th>
 					<th>Telefono</th>
@@ -23,6 +24,7 @@
 				<% @clients.each do |client| %>
 				<tr>
 					<td><%= client.id %></td>
+					<td><%= client.route.id %> : <%= client.route.ruta %></td>
 					<td><%= client.name %></td>
 					<td><%= client.address %></td>
 					<td><%= client.phone %></td>

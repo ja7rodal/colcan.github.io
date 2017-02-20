@@ -14,4 +14,5 @@
 class Client < ApplicationRecord
 	has_many :receipts
 	has_one :user
+	belongs_to :route
 end

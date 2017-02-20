@@ -8,7 +8,8 @@ namespace :db do
 				name:			Faker::Company.name,
 				email:    Faker::Internet.email,  
 				address:	Faker::Address.street_address,
-				phone:		Faker::Number.between(5792344, 8913456)
+				phone:		Faker::Number.between(5792344, 8913456),
+				route_id: Faker::Number.between(1, 5)
 				)
 		end
 	end

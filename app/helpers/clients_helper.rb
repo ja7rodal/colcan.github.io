@@ -1,5 +1,5 @@
 module ClientsHelper
-	def form_title
+	def form_title_client
 		@client.new_record? ? "Crear Cliente" : "Modificar Cliente"
 	end
 	def header_style

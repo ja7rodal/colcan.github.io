@@ -1,6 +1,6 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h2><%= form_title %></h2>
+      <h2><%= form_title_client %></h2>
 
       <% if @client.errors.any? %>
       <div class="alert alert-danger">
@@ -31,7 +31,7 @@
 
 
       <div class="form-group">
-        <%= f.submit form_title, class: "btn btn-primary btn-lg" %>
+        <%= f.submit form_title_client, class: "btn btn-primary btn-lg" %>
       </div>
 
       <% end %>
