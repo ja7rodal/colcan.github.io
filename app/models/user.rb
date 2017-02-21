@@ -23,4 +23,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	has_many :receipts
+	has_one :route
+	
+	enum role: [:admin, :logistica, :preanalitica, :cajero, :mensajero]
 end

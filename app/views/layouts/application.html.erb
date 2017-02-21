@@ -32,7 +32,7 @@
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
 								<% if user_signed_in? %>
-								<li><%= link_to current_user.email, root_path  %></li>
+								<li><%= link_to "current_user.name" ,edit_user_registration_path  %></li>
 								<li><%= link_to "Clientes" , clients_path %></li>
 								<li><%= link_to "Rutas", routes_path %></li>
 								<li><%= link_to "Comprobantes", receipts_path %></li>
