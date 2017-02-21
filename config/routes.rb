@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 	resources :clients
 	resources :receipts
 	resources :routes
+	resources :cajeros
 	
 end

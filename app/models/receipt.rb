@@ -14,7 +14,7 @@
 class Receipt < ApplicationRecord
   belongs_to :client
   belongs_to :user
-	belongs_to :route
+	#belongs_to :route
 	has_many :samples
 	
 end

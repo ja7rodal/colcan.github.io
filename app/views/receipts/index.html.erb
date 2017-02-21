@@ -13,7 +13,7 @@
 					<th>Codigo</th>
 					<th>Cliente</th>
 					<th>Amount</th>
-					<th>Edit</th>
+					<th>Aprobar</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -21,9 +21,9 @@
 				<tr>
 					<td><%= link_to "Comp. "+receipt.id.to_s, receipt_path(receipt) %></td>
 					<td><%= receipt.client.name %></td>
-					<td><%= receipt.amount %></td>
-					<td><%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_receipt_path(receipt)%></td>
-
+					<td class="text-right"><%= number_to_currency(receipt.amount, precision: 1) %></td>
+					<td></td>
+				</tr>
 				<% end %>
 			</tbody>
 		</table>

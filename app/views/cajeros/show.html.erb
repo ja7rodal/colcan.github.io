@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-sm-offset-2 col-sm-8">
+		<h2><%= @mensajero.email %></h2>
+		<hr>
+
+		<%= form_tag class: "form-group" do %>
+
+
+		<h3 class="text-right">Total : 
+			<%= number_to_currency(@mensajero.receipts.sum(:amount), precision: 1) %> 
+
+		</h3>
+		<div class="text-right">
+			<span>Entregado: </span>	
+			<%= number_field_tag 'entregado' %>
+		</div><br>
+		<div class="form-group text-right">
+			<%= submit_tag "Athenea", class: "btn btn-success" %>
+		</div>
+		<table class="table table-bordered table-hover table-striped">
+			<thead>
+				<tr>
+					<th>Codigo</th>
+					<th>Cliente</th>
+					<th>Valor</th>
+					<th>Atenea</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @mensajero.receipts.each do |receipt| %>
+				<tr>
+					<td><%= link_to "Comp. "+receipt.id.to_s, receipt_path(receipt) %></td>
+					<td><%= receipt.client.name %></td>
+					<td class="text-right"><%= number_to_currency(receipt.amount, precision: 1) %></td>
+					<td><%= check_box_tag receipt.id ,"value", true %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+		<% end %>	
+	</div>
+</div>
