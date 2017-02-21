@@ -32,22 +32,27 @@
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
 								<% if user_signed_in? %>
-								<li><%= link_to current_user.name, root_path  %></li>
+								<li><%= link_to current_user.name   %></li>
+								<% if current_user.admin? %>
+									<li><%= link_to current_user.role %></li>
+								<% end %>
+								
 								<li><%= link_to "Clientes" , clients_path %></li>
 								<li><%= link_to "Rutas", routes_path %></li>
 								<li><%= link_to "Comprobantes", receipts_path %></li>
 								<li><%= link_to "Cajero", cajeros_path %></li>
+								<li><%= link_to "PreAnalitica", analiticas_path %></li>
 								<li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
 								<% else %>
 								<li><%= link_to "Ingresar", new_user_session_path%></li>
 								<li><%= link_to "Registrarse", new_user_registration_path %></li>
 								<% end %>
 							</ul>
-<!--							<form class="navbar-form navbar-right" role="search">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Search">
-								</div>
-							</form>-->
+							<!--							<form class="navbar-form navbar-right" role="search">
+<div class="form-group">
+<input type="text" class="form-control" placeholder="Search">
+</div>
+</form>-->
 						</div><!-- /.navbar-collapse -->
 					</div>
 				</div>
@@ -61,11 +66,11 @@
 			<%= flash[:notice] %>
 		</div>	
 
-	<% end %>
+		<% end %>
 
 
-	<div class="container">
-		<%= yield %>
-	</div>
+		<div class="container">
+			<%= yield %>
+		</div>
 	</body>
 </html>

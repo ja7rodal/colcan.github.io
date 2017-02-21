@@ -13,7 +13,8 @@
 				<ul class="list-group">
 					<% @client.receipts.each do |receipt| %>
 					<li class="list-group-item">
-					<%= link_to "Comprobante "+receipt.id.to_s, receipt_path(receipt) %> ,<%= receipt.created_at.strftime("%B %d, %Y") %>,por valor de : $<%= receipt.amount %> </li>
+					<%= link_to "Comprobante No. "+receipt.id.to_s, receipt_path(receipt) %> de <%= receipt.created_at.strftime("%B %d de  %Y") %><br>Valor :  
+					<%= number_to_currency(receipt.amount, precision: 1) %> </li>
 					<% end %>
 				</ul>
 			</div>
