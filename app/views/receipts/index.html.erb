@@ -22,7 +22,7 @@
 					<td><%= link_to "Comp. "+receipt.id.to_s, receipt_path(receipt) %></td>
 					<td><%= receipt.client.name %></td>
 					<td class="text-right"><%= number_to_currency(receipt.amount, precision: 1) %></td>
-					<td></td>
+					<td class="bg-primary">Recibido</td>
 				</tr>
 				<% end %>
 			</tbody>

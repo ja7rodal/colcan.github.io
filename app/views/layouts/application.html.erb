@@ -33,15 +33,18 @@
 							<ul class="nav navbar-nav navbar-right">
 								<% if user_signed_in? %>
 								<li><%= link_to current_user.name   %></li>
-								<% if current_user.admin? %>
-									<li><%= link_to current_user.role %></li>
+								<% if current_user.admin? || current_user.logistica? %>
+									<li><%= link_to "Rutas", routes_path %></li>
+									<li><%= link_to "Clientes" , clients_path %></li>
+									<li><%= link_to "Comprobantes", receipts_path %></li>
 								<% end %>
-								
-								<li><%= link_to "Clientes" , clients_path %></li>
-								<li><%= link_to "Rutas", routes_path %></li>
-								<li><%= link_to "Comprobantes", receipts_path %></li>
-								<li><%= link_to "Cajero", cajeros_path %></li>
-								<li><%= link_to "PreAnalitica", analiticas_path %></li>
+
+								<% if current_user.admin? || current_user.cajero? %>
+									<li><%= link_to "Cajero", cajeros_path %></li>
+								<% end %>
+								<% if current_user.admin? || current_user.preanalitica? %>
+									<li><%= link_to "PreAnalitica", analiticas_path %></li>
+								<% end %>
 								<li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
 								<% else %>
 								<li><%= link_to "Ingresar", new_user_session_path%></li>
